@@ -3,7 +3,7 @@ function [class_01,class_02] = classify_identify(type, dim_reduction)
 
     train_data = load_database(1);
     test_data = load_database(2);
-    if dim_reduction == 'PCA'
+    if strcmp(dim_reduction, 'PCA')
         [Y,principle_basis, mean_features] = PCA(train_data,2000);
     
         [m_test,n_test] = size(test_data);
@@ -13,6 +13,7 @@ function [class_01,class_02] = classify_identify(type, dim_reduction)
         updated_test_data = principle_basis'*sub_data;
     else
         updated_test_data = tsne(double(test_data)')';
+        gscatter(updated_test_data(:,1),updated_test_data(:,2))
     end
 
     if type == 1 

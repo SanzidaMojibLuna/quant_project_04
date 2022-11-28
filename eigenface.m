@@ -19,7 +19,9 @@ for k = [1,2,10,50,150,500,1000,2000]
 end
 %figure
 %plot(x_axis,y_axis);
-
+set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
+set(gcf, 'PaperSize', [5 5]);
+saveas(gcf, 'figures/faces.pdf')
 end
 
 

@@ -11,6 +11,6 @@
 %xlim([0 3])
 %ylim([0 140])
 %disp(class_02');
-dim_reduc = 'PCA';
+dim_reduc = 'tSNE';
 fprintf('Classification and identification with KNN and %s', dim_reduc)
 [class_01,class_02] = classify_identify(2, dim_reduc);	

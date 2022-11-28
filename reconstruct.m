@@ -13,6 +13,8 @@ function [] = reconstruct()
         title (t)
         i = i+1;
     end
-
+set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
+set(gcf, 'PaperSize', [5 5]);
+saveas(gcf, 'figures/reconstruct.pdf')
 end
 
