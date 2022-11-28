@@ -1,8 +1,9 @@
-%disp('Generating Eigenfaces')
-%eigenface()
-%disp('Reconstructing from Eigenfaces')
-%reconstruct()
-%disp('Classification and identification with KMeans')
+disp('Generating Eigenfaces')
+eigenface()
+disp('Reconstructing from Eigenfaces')
+reconstruct()
+disp('Classification and identification with KMeans')
+classify_identify(1);
 %[class_01,class_02] = classify_identify(1,1);
 %[m,n] = size(class_01);
 %x = 1:m;

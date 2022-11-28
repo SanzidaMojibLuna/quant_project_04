@@ -11,7 +11,7 @@ function [] = classify_identify(type)
     sub_data = test_data - repmat(mean_features,1,n_test); 
     updated_test_data = principle_basis'*sub_data;
 
-    if type == 1 
+    if type ==1 
         
         %KMeans classification
 
@@ -22,7 +22,7 @@ function [] = classify_identify(type)
         updated_test_data (:,121:m_test) = [];
         class_02 = kmeans (updated_test_data', 40);
 
-    elseif type == 2 
+    else 
         
         %KNN classification
 
