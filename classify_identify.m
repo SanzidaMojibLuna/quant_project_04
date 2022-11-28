@@ -6,8 +6,6 @@ function [] = classify_identify(type, dim_reduction)
     test_data = double(test_data);
     if strcmp(dim_reduction, 'PCA')
         [Y,principle_basis, mean_features] = PCA(train_data,2000);
-      
-        
         
         sub_data = test_data - repmat(mean_features,1,n_test); 
         updated_test_data = principle_basis'*sub_data;
@@ -24,11 +22,12 @@ function [] = classify_identify(type, dim_reduction)
         updated_test_data = updated_all_data(281:end, :)';
         Y = updated_all_data(1:280, :);
         title("Training Data Plotted With t-SNE")
+        figure
         gscatter(Y(:,1),Y(:,2), labels);
-        Y=Y';
-        disp(size(Y))
-        disp(size(labels))
-        
+        set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
+        set(gcf, 'PaperSize', [5 5]);
+        saveas(gcf, 'figures/tSNE.pdf')
+        Y=Y';        
         
     end
 
