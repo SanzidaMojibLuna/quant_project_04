@@ -1,4 +1,4 @@
-function [class_01,class_02] = classify_identify(type)
+function [class_01,class_02] = classify_identify(type_c,type_i)
 
 
     train_data = load_database(1);
@@ -11,13 +11,17 @@ function [class_01,class_02] = classify_identify(type)
     sub_data = test_data - repmat(mean_features,1,n_test); 
     updated_test_data = principle_basis'*sub_data;
 
-    if type == 1 %KMeans
+    if type_c == 1 %KMeans classification
 
         class_01 = kmeans (updated_test_data', 2);
 
+    elseif type_i == 1 %KMeans identification
+        
         updated_test_data (:,121:130) = [];
         class_02 = kmeans (updated_test_data', 40);
-        
+
+    else
+
                        
     end
         
