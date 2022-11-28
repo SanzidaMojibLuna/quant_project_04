@@ -13,3 +13,5 @@
 %disp(class_02');
 disp('Classification and identification with KNN')
 classify_identify(2);	
+	
+

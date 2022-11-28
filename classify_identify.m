@@ -1,8 +1,8 @@
 function [] = classify_identify(type)
 
-
     train_data = load_database(1);
     test_data = load_database(2);
+    
     [Y,principle_basis, mean_features] = PCA(train_data,2000);
 
     [m_test,n_test] = size(test_data);
