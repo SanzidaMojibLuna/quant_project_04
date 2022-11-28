@@ -11,7 +11,7 @@ function [class_01,class_02] = classify_identify(type)
     sub_data = test_data - repmat(mean_features,1,n_test); 
     updated_test_data = principle_basis'*sub_data;
 
-    if type ==1 %KMeans
+    if type == 1 %KMeans
 
         class_01 = kmeans (updated_test_data', 2);
 
