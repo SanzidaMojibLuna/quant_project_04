@@ -1,15 +1,19 @@
-function [class_01,class_02] = classify_identify(type)
+function [class_01,class_02] = classify_identify(type, dim_reduction)
 
 
     train_data = load_database(1);
     test_data = load_database(2);
-    [Y,principle_basis, mean_features] = PCA(train_data,2000);
-
-    [m_test,n_test] = size(test_data);
-    test_data = double(test_data);
+    if dim_reduction == 'PCA'
+        [Y,principle_basis, mean_features] = PCA(train_data,2000);
     
-    sub_data = test_data - repmat(mean_features,1,n_test); 
-    updated_test_data = principle_basis'*sub_data;
+        [m_test,n_test] = size(test_data);
+        test_data = double(test_data);
+        
+        sub_data = test_data - repmat(mean_features,1,n_test); 
+        updated_test_data = principle_basis'*sub_data;
+    else
+        updated_test_data = tsne(double(test_data)')';
+    end
 
     if type == 1 
         
