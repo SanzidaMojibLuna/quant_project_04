@@ -44,7 +44,6 @@ function [] = classify_identify(type)
             end
         end
         confidence = sum / n_test;
-        disp('classification accuracy in KNN');
         disp(confidence);
 
         %KNN identification
@@ -74,7 +73,7 @@ function [] = classify_identify(type)
                 class_02(i) = 36;
             end
         end
-        %disp(class_02);
+        disp(class_02);
         sum = 0;
         for i = 1:120
             if ideal_test_class(i) == class_02(i)
@@ -82,7 +81,7 @@ function [] = classify_identify(type)
             end
         end
         confidence = sum / 120;
-        disp('identification accuracy in KNN');
+        
         disp(confidence);
         
     end

@@ -12,4 +12,4 @@
 %ylim([0 140])
 %disp(class_02');
 disp('Classification and identification with KNN')
-[class_01,class_02] = classify_identify(2);	
+classify_identify(2);	
