@@ -33,7 +33,7 @@ function [] = classify_identify(type, dim_reduction)
     end
 
 
-    if type == 1 
+    if type ==1 
         
         %KMeans classification
 
@@ -44,7 +44,7 @@ function [] = classify_identify(type, dim_reduction)
         updated_test_data (:,121:m_test) = [];
         class_02 = kmeans (updated_test_data', 40);
 
-    elseif type == 2 
+    else 
         
         %KNN classification
 
