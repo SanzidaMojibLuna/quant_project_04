@@ -12,6 +12,6 @@
 %ylim([0 140])
 %disp(class_02');
 dim_reduc = 'tSNE';
-fprintf('Classification and identification with KNN and %s\n', dim_reduc)
+fprintf('Classification and identification with KNN and %s', dim_reduc)
 classify_identify(2, dim_reduc);	
 
