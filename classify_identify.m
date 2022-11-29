@@ -45,8 +45,8 @@ function [] = classify_identify(type, dim_reduction)
                 count = count + 1;
             end
         end
-        fprintf('in cluster 01 %d\n', count)
-        fprintf('in cluster 02 %d\n', 130 - count)
+        fprintf('Data points in cluster_01 %d\n', count)
+        fprintf('Data points in cluster_02 %d\n', 130 - count)
 
         %KMeans identification
 
