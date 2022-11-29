@@ -45,9 +45,8 @@ function [] = classify_identify(type, dim_reduction)
                 count = count + 1;
             end
         end
-        fprintf('in cluster 01 %d\n', count)
-        fprintf('in cluster 02 %d\n', 130 - count)
-
+        fprintf('Classification and identification with KNN and %s\n', dim_reduc)
+        
         %KMeans identification
 
         updated_test_data (:,121:130) = [];
@@ -59,7 +58,7 @@ function [] = classify_identify(type, dim_reduction)
         
         %KNN classification
 
-        [Idx, D] = knnsearch (Y', updated_test_data');
+        [idx, D] = knnsearch (Y', updated_test_data');
         mean_D = mean(D);
         for i = 1:n_test
             if D(i) < mean_D
@@ -99,10 +98,10 @@ function [] = classify_identify(type, dim_reduction)
         end
 
         %disp(size(ideal_class02));
-        [Idx, D] = knnsearch (Y', updated_test_data');
+        [idx, D] = knnsearch (Y', updated_test_data');
         mean_D = mean(D);
-        %disp(Idx);
-        class_02 = ideal_train_class(Idx);
+        %disp(idx);
+        class_02 = ideal_train_class(idx);
         for i = 1:120
             if D(i) > mean_D
                 class_02(i) = 36;
