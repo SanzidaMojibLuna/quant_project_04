@@ -88,6 +88,7 @@ function [] = classify_identify(type, dim_reduction)
 
         %disp(size(ideal_class02));
         [idx, D] = knnsearch (Y', updated_test_data');
+        mean_D = mean(D);
         %disp(idx);
         class_02 = ideal_train_class(idx);
         for i = 1:120
