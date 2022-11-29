@@ -40,7 +40,7 @@ function [] = classify_identify(type, dim_reduction)
         
         %KMeans identification
 
-        updated_test_data (:,121:m_test) = [];
+        updated_test_data (:,121:130) = [];
         class_02 = kmeans (updated_test_data', 40);
 
     else 
